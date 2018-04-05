@@ -1,0 +1,14 @@
+<p>Facebook Login Test</p>
+
+{{#unless session.isAuthenticated}}
+  <p>
+    Login:
+    <span {{action "signIn" "facebook"}} class="btn">{{fa-icon "facebook"}}</span>
+  </p>
+{{else}}
+  <p>
+    Logged in as: {{session.currentUser.displayName}}
+    <br />
+    <span {{action "signOut"}} class="btn">Sign out{{fa-icon "sign-out"}}</span>
+  </p>
+{{/unless}}
